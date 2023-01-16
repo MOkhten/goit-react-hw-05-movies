@@ -8,7 +8,7 @@ const Home = () => {
   const [status, setStatus] = useState('idle');
 
   useEffect(() => {
-    const getTreds = async () => {
+    const getTrends = async () => {
       try {
         setStatus('loading');
         const { results } = await getTrendingMovies();
@@ -20,17 +20,14 @@ const Home = () => {
         setStatus('idle');
       }
     }
-     getTreds();
+     getTrends();
   }, []);
 
   return (
     <main >
-      <ul movies={movies}>
+       <h1>Trending today</h1>
+      <ul movies={movies}/>
          {status === 'loading' && <Loader />}
-        <li></li>
-      </ul>
-       
-     
       <Toaster />
     </main>
   );
