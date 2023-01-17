@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useParams, Outlet, useNavigate, Link } from 'react-router-dom';
+import { useParams, Outlet, useNavigate } from 'react-router-dom';
 import { getMovieById } from 'api';
 import Loader from 'components/Loader/Loader';
 import toast, { Toaster } from 'react-hot-toast';
