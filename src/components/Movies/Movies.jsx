@@ -2,20 +2,24 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 // import css from './Seachbar.module.css';
 import { FiSearch } from 'react-icons/fi';
+import toast, { Toaster } from 'react-hot-toast';
 
  function Movies({onSubmit}) {
-  const [search, setSearch] = useState('');
- const inputChange = e => setSearch(e.currentTarget.value);
+  const [query, setQuery] = useState('');
+ const inputChange = e => setQuery(e.currentTarget.value);
   
  const handleSubmit = e => {
-    e.preventDefault();
-    onSubmit(search.toLowerCase());
-    setSearch('');
+   e.preventDefault();
+   if (query.trim() === '') {
+      return toast.error('Please enter something');
+    }
+    onSubmit(query.toLowerCase());
+    setQuery('');
   };
 
   return (
 
-    <header >
+    < >
         <form  onSubmit={handleSubmit}>
           <button type="submit" >
             <span ><FiSearch/></span>
@@ -23,16 +27,16 @@ import { FiSearch } from 'react-icons/fi';
 
            <input 
             type="text"
-            name="query"
+            name="search"
             autoComplete="off"
             autoFocus
-            placeholder="Search images and photos"
+            placeholder="Search movies"
             onChange={inputChange}
-            value={search}
+            value={query}
           />
         </form>
-          
-      </header>
+          <Toaster />
+      </>
   )
 }
 
