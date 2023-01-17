@@ -1,9 +1,9 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useParams, Outlet, useNavigate } from 'react-router-dom';
+import { useParams, Outlet, useNavigate, Link } from 'react-router-dom';
 import { getMovieById } from 'api';
 import Loader from 'components/Loader/Loader';
 import toast, { Toaster } from 'react-hot-toast';
-import { MovieCard, BtnArrow, Poster, MovieDescription, InfoTitle, Info } from './MovieDeatails.styles';
+import { MovieCard, BtnArrow, Poster, MovieDescription, InfoTitle, Info, EditionalInfo, MovieLink } from './MovieDeatails.styles';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -58,8 +58,14 @@ const MovieDetails = () => {
       </InfoTitle>
       
           </MovieDescription>
-         
+        
       </MovieCard>
+      <EditionalInfo>
+        <h3>Editional info:</h3>
+        <p>
+          <MovieLink to='cast'>Cast</MovieLink>
+          </p>
+         </EditionalInfo>
        <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
