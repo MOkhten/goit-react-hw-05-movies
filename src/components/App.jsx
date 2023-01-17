@@ -3,7 +3,7 @@ import { Routes, Route} from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from 'Pages/Home/Home';
 import Movies from "./Movies/Movies";
-import MovieDetails from "Pages/Home/MovieDetails/MovieDetails";
+import MovieDetails from "Pages/MovieDetails/MovieDetails";
 
 export const App = () => {
   return (
