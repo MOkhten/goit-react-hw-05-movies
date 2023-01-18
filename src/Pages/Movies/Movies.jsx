@@ -11,7 +11,7 @@ function Movies() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [movies, setMovie] = useState([]);
     const [status, setStatus] = useState('idle');
-    const query = searchParams.get('query');
+    const query = searchParams.get('query')?? '';;
 
 useEffect(() => {
      if (query === '') {
