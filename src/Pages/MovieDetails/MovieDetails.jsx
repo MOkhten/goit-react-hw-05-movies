@@ -64,8 +64,10 @@ const MovieDetails = () => {
         <h3>Editional info:</h3>
         <p>
           <MovieLink to='cast'>Cast</MovieLink>
-          </p>
-         </EditionalInfo>
+        </p>
+        <p><MovieLink to='reviews'>Reviews</MovieLink></p>
+      </EditionalInfo>
+      
        <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>

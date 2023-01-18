@@ -9,6 +9,7 @@ export const BtnArrow = styled.button`
   align-items: center;
   gap: 5px;
   margin: 20px 0;
+  padding: 20px;
   text-decoration: none;
   border: transparent;
   background-color: white;

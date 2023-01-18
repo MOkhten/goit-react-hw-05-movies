@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-// import css from './Seachbar.module.css';
 import { FiSearch } from 'react-icons/fi';
 import toast, { Toaster } from 'react-hot-toast';
 
