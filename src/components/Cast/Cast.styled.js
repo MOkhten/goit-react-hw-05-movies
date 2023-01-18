@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Image = styled.img`
 border-radius: 40%;
- width: 150px;
+ width: 160px;
  height: 200px;`
 
  export const ActorList = styled.ul`
@@ -15,7 +15,7 @@ border-radius: 40%;
 
 export const ActorItem = styled.li`
 list-style-type: none;
-width: 150px;`
+width: 160px;`
 
 export const CastInfo = styled.p`
 text-align: center;

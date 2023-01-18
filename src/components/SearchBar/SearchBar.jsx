@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FiSearch } from 'react-icons/fi';
 import toast, { Toaster } from 'react-hot-toast';
 
- function Movies({onSubmit}) {
+ function SearchBar({onSubmit}) {
   const [query, setQuery] = useState('');
  const inputChange = e => setQuery(e.currentTarget.value);
   
@@ -40,8 +40,8 @@ import toast, { Toaster } from 'react-hot-toast';
 }
 
 
-Movies.propTypes = {
+SearchBar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default Movies;
+export default SearchBar;
