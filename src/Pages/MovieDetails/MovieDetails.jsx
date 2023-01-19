@@ -68,7 +68,7 @@ const MovieDetails = () => {
         <p><MovieLink to='reviews'>Reviews</MovieLink></p>
       </EditionalInfo>
       
-       <Suspense fallback={<Loader />}>
+       <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
           {status === 'loading' && <Loader />}
