@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'api';
 import toast, { Toaster } from 'react-hot-toast';
 import Loader from 'components/Loader/Loader';
-import { MovieItem } from './Home.styles';
+import { MovieItem, Item, List, Img  } from './Home.styles';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -18,6 +18,7 @@ const Home = () => {
           films.map(film => ({
             id: film.id,
             title: film.title,
+            poster_path: film.poster_path,
           }))
   
         );
@@ -33,19 +34,24 @@ const Home = () => {
      getTrends();
   }, []);
 
+  const imgUrl = 'https://image.tmdb.org/t/p/w200';
+
   return (
     <main >
       <h1>Trending today</h1>
-      <ul>
+      <List >
         {movies?.map(film => (
-          <li key ={film.id}>
-            <MovieItem to={`/movies/${film.id}`}>{film.title}</MovieItem>
-         </li>
+          <Item key ={film.id}>
+            <MovieItem to={`/movies/${film.id}`}>
+             
+              <Img src={`${imgUrl}${film.poster_path}`} alt={film.title} /> </MovieItem>
+             <p>{film.title}</p>
+         </Item>
        ))}
          {status === 'loading' && <Loader />}
       <Toaster />
 
-      </ul>
+      </List>
       
     </main>
   );
